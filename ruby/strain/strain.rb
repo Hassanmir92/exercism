@@ -1,14 +1,10 @@
 class Array
   def keep
-    kept = []
-    each { |e| kept << e if yield(e) }
-    kept
+    map { |e| e if yield(e) }.compact
   end
 
   def discard
-    discarded = []
-    each { |e| discarded << e unless yield(e) }
-    discarded
+    map { |e| e unless yield(e) }.compact
   end
 
 end
