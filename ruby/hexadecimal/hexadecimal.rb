@@ -32,11 +32,9 @@ class Hexadecimal
   end
 
   def toDec
-    decimal = 0
-    hexadecimal.each_with_index do |d, index|
+    hexadecimal.map.with_index.reduce(0) do |decimal, (d, index)|
       decimal += HEX[d] * 16**index
     end
-    decimal
   end
 
   def valid?
