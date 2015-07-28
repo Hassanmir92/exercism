@@ -1,11 +1,9 @@
 class Array
 
   def accumulate
-    result = []
-    each do |e|
-      result << yield(e)
+    map do |e|
+      yield(e)
     end
-    result
   end
 
 end
