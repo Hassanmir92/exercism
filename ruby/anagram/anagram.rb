@@ -2,16 +2,13 @@ class Anagram
   attr_reader :word
 
   def initialize(word)
-    @word = word
+    @word = word.downcase
   end
 
   def match(array)
-    j = word.downcase
-    a = []
-    array.each do |i|
-      a.push(i) if j.chars.sort == i.downcase.chars.sort && i.downcase != j
+    array.select do |i|
+      word.chars.sort == i.downcase.chars.sort && i.downcase != word
     end
-    a
   end
 
 end

@@ -1,15 +1,13 @@
 class Trinary
-  attr_reader :number
+  attr_reader :trinary
 
-  def initialize(decimal)
-    @number = decimal.reverse.chars.collect(&:to_i)
+  def initialize(trinary)
+    @trinary = trinary.reverse.chars.map(&:to_i)
   end
 
   def to_decimal
-    decimal = 0
-    number.each_with_index do |n, index|
-      decimal += n * 3**index
+    trinary.map.with_index.reduce(0) do |sum, (n, index)|
+      sum += n * 3**index
     end
-    decimal
   end
 end
