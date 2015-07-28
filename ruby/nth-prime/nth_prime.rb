@@ -1,10 +1,8 @@
 class Prime
   
   def self.nth(n)
-    if n < 1
-      raise ArgumentError
-    end
-
+    raise ArgumentError if n < 1
+      
     primes = 0
     i = 1
     while primes < n
