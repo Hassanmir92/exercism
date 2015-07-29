@@ -51,4 +51,18 @@ class ComplementTest < Minitest::Test
   def test_rna_raises_argument_error
     assert_raises(ArgumentError) { Complement.of_rna('T') }
   end
-end
+
+  def test_rna_raises_argument_error_on_completely_invalid_input
+    assert_raises(ArgumentError) { Complement.of_rna('XXX') }
+  end
+
+  def tes_dna_raises_argument_error_on_completely_invalid_input
+    assert_raises(ArgumentError) { Complement.of_dna('XXX') }
+  end
+
+    # This test is for the sake of people providing feedback, so they
+    # know which version of the exercise you are solving.
+    def test_bookkeeping
+      assert_equal 1, Complement::VERSION
+    end
+  end
