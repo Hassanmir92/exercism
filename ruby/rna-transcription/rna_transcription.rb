@@ -14,13 +14,11 @@ class Complement
   end
 
   def self.valid_dna?(strand)
-    valid = VALID_DNA - strand.split('')
-    !(valid.length < 4)
+    (strand.chars.uniq - VALID_DNA).any?
   end
 
   def self.valid_rna?(strand)
-    valid = VALID_RNA - strand.split('')
-    !(valid.length < 4)
+    (strand.chars.uniq - VALID_RNA).any?
   end
   
 end
