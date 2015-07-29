@@ -1,19 +1,16 @@
 class Raindrops
 
-  def initialize
-  end
-
   def self.convert(number)
-    output = new.divisible(number)
+    output = self.divisible(number)
 
-    if output == ""
-      "#{number}" 
+    if output.empty?
+      number.to_s
     else
       output
     end
   end
 
-  def divisible(number)
+  def self.divisible(number)
     string = ""
     string += "Pling" if number % 3 == 0
     string += "Plang" if number % 5 == 0
