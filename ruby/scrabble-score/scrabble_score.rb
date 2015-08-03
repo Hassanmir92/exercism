@@ -4,8 +4,6 @@ class Scrabble
     new(word).score
   end
   
-  attr_reader :word
-
   SCORES = {
     'a' => 1, 'b' => 3, 'c' => 3, 'd' => 2, 'e' => 1,
     'f' => 4, 'g' => 2, 'h' => 4, 'i' => 1, 'j' => 8,
@@ -14,6 +12,8 @@ class Scrabble
     'u' => 1, 'v' => 4, 'w' => 4, 'x' => 8, 'y' => 4,
     'z' => 10
   }
+
+  attr_reader :word
 
   def initialize(word)
     if word == " \t\n"

@@ -2,12 +2,7 @@ class Raindrops
 
   def self.convert(number)
     output = self.divisible(number)
-
-    if output.empty?
-      number.to_s
-    else
-      output
-    end
+    output.empty? ? number.to_s : output
   end
 
   def self.divisible(number)

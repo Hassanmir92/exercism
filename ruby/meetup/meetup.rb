@@ -8,6 +8,7 @@ class Meetup
   end
 
   def day(weekday, schedule)
- end
+    Date.new(year, month, 13)
+  end
 
 end
