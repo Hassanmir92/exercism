@@ -5,11 +5,7 @@ class Bst
   end
 
   def insert(value)
-    if value <= data
-      insert_left(value)
-    else
-      insert_right(value)
-    end
+    value <= data ? insert_left(value) : insert_right(value)
   end
 
   def each(&block)
@@ -19,18 +15,10 @@ class Bst
   end
 
   def insert_left(value)
-    if left
-      left.insert(value)
-    else
-      @left = Bst.new(value)
-    end
+    left ? left.insert(value) : @left = Bst.new(value)
   end
 
   def insert_right(value)
-    if right
-      right.insert(value)
-    else
-      @right = Bst.new(value)
-    end
+    right ? right.insert(value) : @right = Bst.new(value)
   end
 end
