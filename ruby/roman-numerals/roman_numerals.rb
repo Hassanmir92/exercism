@@ -16,7 +16,6 @@ class Fixnum
     1 => "I"
   }
 
-
   def to_roman
     arabic_numeral = self
     roman_numeral = ""
