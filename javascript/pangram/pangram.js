@@ -10,7 +10,7 @@ Pangram.prototype.isPangram = function(){
     usedLetters[letter] = true;
   });
 
-  return Object.keys(usedLetters).length === 26;
+  return Object.keys(usedLetters).length === this.alphabetLength;
 };
 
 module.exports = Pangram;
