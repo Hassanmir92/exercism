@@ -6,10 +6,7 @@ var Triangle = function(h,w,l){
 };
 
 Triangle.prototype.kind = function(){
-  if (this.illegal(this.sides)) {
-    throw new Error;
-  };
-
+  if(this.illegal(this.sides)) throw new Error;
   if(this.equilateral(this.sides)) return "equilateral";
   if(this.isosceles(this.sides)) return "isosceles";
   if(this.scalene(this.sides)) return "scalene";
